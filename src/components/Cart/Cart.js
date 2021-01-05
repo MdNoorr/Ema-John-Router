@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Cart = (props) => {
     const cart = props.cart;
-    console.log(cart);
+    // console.log(cart);
     // const totalPrice = cart.reduce((total, prd) =>    total + prd.price,0)
     // const total = cart.reduce( (total, prd) => total + prd.price, 0)
     let total = 0
@@ -32,7 +33,11 @@ const Cart = (props) => {
             <h3>Product Price : {total}</h3>
             <p><small>Shipping Cost : {shipping}</small></p>
             <p><small>Tax + VAT : {tax}</small></p>
-            <p>Total Price : {total + shipping}</p>
+            <p>Total Price : {total + shipping }</p>
+            <br/>
+            <Link to='/review'>
+            <button className='btn'>Place Review</button>
+            </Link>
         </div>
     );
 };
